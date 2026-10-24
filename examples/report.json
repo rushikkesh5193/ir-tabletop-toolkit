@@ -1,0 +1,268 @@
+{
+  "as_of": "2026-10-24",
+  "issues": [
+    {
+      "area": "exercise",
+      "check": "NOTIFICATION_MISSED",
+      "severity": "critical",
+      "ref": "Affected customers",
+      "title": "Affected customers was never notified in the exercise",
+      "detail": "Deadline is 72 h from awareness.",
+      "action": "Add the notification step and owner to the plan."
+    },
+    {
+      "area": "exercise",
+      "check": "NOTIFICATION_LATE",
+      "severity": "critical",
+      "ref": "Regulator (CERT-In, example)",
+      "title": "Regulator (CERT-In, example) notified after the deadline",
+      "detail": "Notified 8.7 h after awareness; deadline 6 h.",
+      "action": "Pre-draft the notification and name who sends it."
+    },
+    {
+      "area": "actions",
+      "check": "CORRECTIVE_ACTION_OVERDUE",
+      "severity": "high",
+      "ref": "CA-PREV-1",
+      "title": "Corrective action CA-PREV-1 is overdue",
+      "detail": "Add out-of-hours on-call rota. Due 2026-09-30 (24 days late), owner IT Manager.",
+      "action": "Re-baseline with the owner or escalate."
+    },
+    {
+      "area": "plan",
+      "check": "ROLE_MISSING",
+      "severity": "high",
+      "ref": "Legal / Compliance",
+      "title": "No one is assigned the Legal / Compliance role",
+      "detail": "Required role is absent from the plan.",
+      "action": "Name a primary and a deputy."
+    },
+    {
+      "area": "plan",
+      "check": "PHASE_MISSING",
+      "severity": "high",
+      "ref": "Phases",
+      "title": "1 response phase(s) not documented",
+      "detail": "post_incident_review.",
+      "action": "Document each phase with owners, steps and exit criteria."
+    },
+    {
+      "area": "plan",
+      "check": "PLAN_NOT_TESTED",
+      "severity": "high",
+      "ref": "Plan",
+      "title": "Plan not tested in the last 12 months",
+      "detail": "Last tested: 2025-08-20.",
+      "action": "Run a tabletop exercise."
+    },
+    {
+      "area": "exercise",
+      "check": "ACTION_MISSED",
+      "severity": "medium",
+      "ref": "I2",
+      "title": "Expected action not taken: assess data exposure",
+      "detail": "Inject I2: Ransom note found; attacker claims data was stolen",
+      "action": "Add 'assess data exposure' to the playbook and rehearse it with the Incident Commander."
+    },
+    {
+      "area": "exercise",
+      "check": "RESPONSE_LATE",
+      "severity": "medium",
+      "ref": "I2",
+      "title": "Inject I2 not handled in time",
+      "detail": "responded after 35 min, target 20.",
+      "action": "Review escalation and on-call arrangements."
+    },
+    {
+      "area": "exercise",
+      "check": "ACTION_MISSED",
+      "severity": "medium",
+      "ref": "I5",
+      "title": "Expected action not taken: notify affected customers",
+      "detail": "Inject I5: Legal asks if reporting obligations are triggered",
+      "action": "Add 'notify affected customers' to the playbook and rehearse it with the Legal / Compliance."
+    },
+    {
+      "area": "exercise",
+      "check": "RESPONSE_LATE",
+      "severity": "medium",
+      "ref": "I5",
+      "title": "Inject I5 not handled in time",
+      "detail": "responded after 370 min, target 20.",
+      "action": "Review escalation and on-call arrangements."
+    },
+    {
+      "area": "plan",
+      "check": "CONTACT_STALE",
+      "severity": "medium",
+      "ref": "Communications Lead",
+      "title": "Communications Lead contact details not verified in 6 months",
+      "detail": "Last verified: 2026-01-15.",
+      "action": "Call-test the contact numbers."
+    },
+    {
+      "area": "plan",
+      "check": "PLAYBOOK_MISSING",
+      "severity": "medium",
+      "ref": "Playbooks",
+      "title": "2 scenario playbooks missing",
+      "detail": "data_breach, third_party_incident.",
+      "action": "Write a short playbook for each."
+    },
+    {
+      "area": "plan",
+      "check": "SEVERITY_INCOMPLETE",
+      "severity": "medium",
+      "ref": "SEV3",
+      "title": "Severity SEV3 lacks a response time or escalation point",
+      "detail": "",
+      "action": "Add both."
+    },
+    {
+      "area": "plan",
+      "check": "NO_DEPUTY",
+      "severity": "medium",
+      "ref": "Technical Lead",
+      "title": "Technical Lead has no deputy",
+      "detail": "If S. Khan is unavailable nobody is named to act.",
+      "action": "Name a deputy who has been briefed."
+    }
+  ],
+  "exercise": {
+    "results": [
+      {
+        "id": "I1",
+        "minute": 0,
+        "text": "SOC reports mass file renaming on the finance file server",
+        "owner_role": "Technical Lead",
+        "expected": 3,
+        "done": 3,
+        "missed": [],
+        "delay": 9,
+        "limit": 15,
+        "on_time": true
+      },
+      {
+        "id": "I2",
+        "minute": 20,
+        "text": "Ransom note found; attacker claims data was stolen",
+        "owner_role": "Incident Commander",
+        "expected": 3,
+        "done": 2,
+        "missed": [
+          "assess data exposure"
+        ],
+        "delay": 35,
+        "limit": 20,
+        "on_time": false
+      },
+      {
+        "id": "I3",
+        "minute": 45,
+        "text": "Journalist emails asking about an 'outage and breach'",
+        "owner_role": "Communications Lead",
+        "expected": 2,
+        "done": 2,
+        "missed": [],
+        "delay": 25,
+        "limit": 30,
+        "on_time": true
+      },
+      {
+        "id": "I4",
+        "minute": 90,
+        "text": "Backups appear intact; restore decision needed",
+        "owner_role": "Technical Lead",
+        "expected": 3,
+        "done": 3,
+        "missed": [],
+        "delay": 20,
+        "limit": 30,
+        "on_time": true
+      },
+      {
+        "id": "I5",
+        "minute": 150,
+        "text": "Legal asks if reporting obligations are triggered",
+        "owner_role": "Legal / Compliance",
+        "expected": 3,
+        "done": 2,
+        "missed": [
+          "notify affected customers"
+        ],
+        "delay": 370,
+        "limit": 20,
+        "on_time": false
+      }
+    ],
+    "metrics": {
+      "action_coverage_pct": 85.7,
+      "on_time_pct": 60.0,
+      "injects": 5,
+      "notifications": [
+        {
+          "party": "Regulator (CERT-In, example)",
+          "deadline_hours": 6.0,
+          "elapsed_hours": 8.7,
+          "met": false
+        },
+        {
+          "party": "Affected customers",
+          "deadline_hours": 72.0,
+          "elapsed_hours": null,
+          "met": false
+        }
+      ]
+    },
+    "corrective_actions": [
+      {
+        "id": "CA-01",
+        "from": "ACTION_MISSED",
+        "title": "Add 'assess data exposure' to the playbook and rehearse it with the Incident Commander.",
+        "context": "Expected action not taken: assess data exposure",
+        "due": "2026-11-14",
+        "severity": "medium"
+      },
+      {
+        "id": "CA-02",
+        "from": "RESPONSE_LATE",
+        "title": "Review escalation and on-call arrangements.",
+        "context": "Inject I2 not handled in time",
+        "due": "2026-11-14",
+        "severity": "medium"
+      },
+      {
+        "id": "CA-03",
+        "from": "ACTION_MISSED",
+        "title": "Add 'notify affected customers' to the playbook and rehearse it with the Legal / Compliance.",
+        "context": "Expected action not taken: notify affected customers",
+        "due": "2026-11-14",
+        "severity": "medium"
+      },
+      {
+        "id": "CA-04",
+        "from": "RESPONSE_LATE",
+        "title": "Review escalation and on-call arrangements.",
+        "context": "Inject I5 not handled in time",
+        "due": "2026-11-14",
+        "severity": "medium"
+      },
+      {
+        "id": "CA-05",
+        "from": "NOTIFICATION_LATE",
+        "title": "Pre-draft the notification and name who sends it.",
+        "context": "Regulator (CERT-In, example) notified after the deadline",
+        "due": "2026-11-14",
+        "severity": "critical"
+      },
+      {
+        "id": "CA-06",
+        "from": "NOTIFICATION_MISSED",
+        "title": "Add the notification step and owner to the plan.",
+        "context": "Affected customers was never notified in the exercise",
+        "due": "2026-11-14",
+        "severity": "critical"
+      }
+    ]
+  }
+}

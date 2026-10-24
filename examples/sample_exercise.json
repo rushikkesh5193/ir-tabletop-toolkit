@@ -1,0 +1,25 @@
+{
+ "_note": "SYNTHETIC tabletop exercise record.",
+ "name": "Ransomware on file server", "date": "2026-10-15", "scenario": "ransomware",
+ "expects_notification": ["Regulator (CERT-In, example)", "Affected customers"],
+ "injects": [
+  {"id": "I1", "minute": 0, "aware": true, "text": "SOC reports mass file renaming on the finance file server", "respond_within": 15,
+   "critical": true, "owner_role": "Technical Lead",
+   "expected": ["declare incident", "isolate affected server", "preserve logs"]},
+  {"id": "I2", "minute": 20, "text": "Ransom note found; attacker claims data was stolen", "respond_within": 20,
+   "owner_role": "Incident Commander", "expected": ["escalate to CISO", "assess data exposure", "start incident log"]},
+  {"id": "I3", "minute": 45, "text": "Journalist emails asking about an 'outage and breach'", "respond_within": 30,
+   "owner_role": "Communications Lead", "expected": ["hold statement only", "route media queries to communications lead"]},
+  {"id": "I4", "minute": 90, "text": "Backups appear intact; restore decision needed", "respond_within": 30, "critical": true,
+   "owner_role": "Technical Lead", "expected": ["verify backup integrity", "restore to clean environment", "get commander approval"]},
+  {"id": "I5", "minute": 150, "text": "Legal asks if reporting obligations are triggered", "respond_within": 20,
+   "owner_role": "Legal / Compliance", "expected": ["confirm regulator reporting duty", "notify regulator", "notify affected customers"]}
+ ],
+ "responses": [
+  {"inject": "I1", "minute": 9, "by": "Technical Lead", "actions": ["Declare incident", "Isolate affected server", "Preserve logs"]},
+  {"inject": "I2", "minute": 55, "by": "Incident Commander", "actions": ["Escalate to CISO", "Start incident log"]},
+  {"inject": "I3", "minute": 70, "by": "Communications Lead", "actions": ["Hold statement only", "Route media queries to communications lead"]},
+  {"inject": "I4", "minute": 110, "by": "Technical Lead", "actions": ["Verify backup integrity", "Restore to clean environment", "Get commander approval"]},
+  {"inject": "I5", "minute": 520, "by": "Legal / Compliance", "actions": ["Confirm regulator reporting duty", "Notify regulator"], "notified": ["Regulator (CERT-In, example)"]}
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "_note": "SYNTHETIC plan for a fictional company. Notification deadlines are examples: confirm current legal requirements for your organisation.",
+ "organisation": "ExampleOrg Pvt Ltd (fictional)",
+ "last_reviewed": "2026-02-10",
+ "last_tested": "2025-08-20",
+ "phases_documented": ["preparation", "detection", "containment", "eradication", "recovery"],
+ "roles": [
+  {"role": "Incident Commander", "primary": "A. Mehta", "deputy": "R. Iyer", "contact_verified": "2026-08-01"},
+  {"role": "Technical Lead", "primary": "S. Khan", "deputy": "", "contact_verified": "2026-08-01"},
+  {"role": "Communications Lead", "primary": "P. Nair", "deputy": "T. Shah", "contact_verified": "2026-01-15"}
+ ],
+ "severity_levels": [
+  {"name": "SEV1", "response_minutes": 15, "escalate_to": "CISO"},
+  {"name": "SEV2", "response_minutes": 60, "escalate_to": "IT Manager"},
+  {"name": "SEV3", "response_minutes": 240}
+ ],
+ "notifications": [
+  {"party": "Regulator (CERT-In, example)", "deadline_hours": 6},
+  {"party": "Affected customers", "deadline_hours": 72}
+ ],
+ "playbooks": ["ransomware", "phishing_account_compromise"],
+ "corrective_actions": [
+  {"id": "CA-PREV-1", "title": "Add out-of-hours on-call rota", "owner": "IT Manager", "due": "2026-09-30"},
+  {"id": "CA-PREV-2", "title": "Update contact tree", "owner": "HR Head", "due": "2026-08-01", "closed": "2026-07-28"}
+ ]
+}

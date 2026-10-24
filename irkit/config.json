@@ -1,0 +1,11 @@
+{
+  "required_phases": ["preparation", "detection", "containment", "eradication", "recovery", "post_incident_review"],
+  "required_roles": ["Incident Commander", "Technical Lead", "Communications Lead", "Legal / Compliance"],
+  "required_playbooks": ["ransomware", "phishing_account_compromise", "data_breach", "third_party_incident"],
+  "plan_review_max_months": 12,
+  "plan_test_max_months": 12,
+  "contact_verified_max_months": 6,
+  "corrective_action_days": 30,
+  "min_action_coverage_pct": 80,
+  "max_ids_listed": 10
+}
