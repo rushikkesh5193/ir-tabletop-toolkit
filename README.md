@@ -51,7 +51,7 @@ See the two files in `examples/`. Inputs are validated (duplicate inject IDs, re
 
 ## Tests
 
-33 tests cover each plan check on both sides of its boundary, scoring (including awareness-based clocks, earliest response, combining several responses), notification deadlines, corrective-action generation, validation and an end-to-end run that must find **exactly** the injected problems. I also broke the code five ways (flipped boundaries, a clock started from the exercise start instead of awareness, using the latest response instead of the earliest, a longer test window) and confirmed the tests fail each time.
+33 tests cover each plan check on both sides of its boundary, scoring (including awareness-based clocks, earliest response, combining several responses), notification deadlines, corrective-action generation, validation and an end-to-end run that must find **exactly** the injected problems. I also broke the code five ways “flipped boundaries, a clock started from the exercise start instead of awareness, using the latest response instead of the earliest, a longer test window” and confirmed the tests fail each time.
 
 ## Limitations
 
